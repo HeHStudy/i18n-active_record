@@ -54,7 +54,7 @@ module I18n
         self.table_name = 'translations'
 
         if ::ActiveRecord.version >= Gem::Version.new('7.1.0.alpha')
-          serialize :value, coder: YAML
+          # serialize :value, coder: YAML # Already serialized by default (JSON column type)
           serialize :interpolations, coder: YAML, type: Array
         else
           serialize :value
